@@ -8,25 +8,37 @@
 </head>
 <body>
   <header>
-    <h1>打字出圖小遊戲</h1>
-    <p>輸入單字（例如：apple），就會出現對應的圖片！</p>
+    <p class="eyebrow">鍵盤版小遊戲</p>
+    <h1>打字出圖</h1>
+    <p>直接用鍵盤輸入字母，Enter 顯示圖片。Esc 清除輸入。</p>
   </header>
 
-  <main>
-    <section class="controls">
-      <label for="word-input">輸入英文單字</label>
-      <div class="input-row">
-        <input id="word-input" type="text" autocomplete="off" placeholder="例如：apple" />
-        <button id="show-button" type="button">顯示圖片</button>
+  <main class="game-layout">
+    <section class="word-panel" aria-live="polite">
+      <div class="type-display">
+        <p class="label">目前輸入</p>
+        <div id="typed-bubble" class="typed-bubble" aria-label="目前輸入的字母"></div>
+        <p class="hint">打字即可篩選，Enter 顯示，Backspace 刪除，Esc 清空</p>
       </div>
-      <p class="hint">可試試：apple、banana、cat、dog、car、sun</p>
+      <div class="word-bank">
+        <div class="word-bank__header">
+          <p class="label">可以輸入的單字</p>
+          <p id="word-count" class="count"></p>
+        </div>
+        <div id="word-grid" class="word-grid" role="list"></div>
+      </div>
     </section>
 
     <section class="display" aria-live="polite">
+      <div class="frame-header">
+        <p class="label">結果畫面</p>
+        <p id="status" class="status">輸入任何字母開始遊戲！</p>
+      </div>
       <div id="image-frame" class="image-frame" role="img" aria-label=""></div>
-      <p id="status" class="status">請輸入單字後按「顯示圖片」。</p>
     </section>
   </main>
+
+  <input id="hidden-input" type="text" aria-hidden="true" autocomplete="off" tabindex="-1" />
 
   <script src="script.js"></script>
 </body>
