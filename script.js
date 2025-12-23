@@ -83,26 +83,22 @@ function handleKeydown(event) {
     return;
   }
 
-  if (key === 'Backspace') {
-    currentQuery = currentQuery.slice(0, -1);
-  } else if (key === 'Escape') {
+  if (key === 'Escape') {
+    event.preventDefault();
     currentQuery = '';
+    hiddenInput.value = '';
     setStatus('輸入已清空，重新開始吧！');
     imageFrame.innerHTML = '';
     imageFrame.setAttribute('aria-label', '');
-  } else if (/^[a-zA-Z]$/.test(key)) {
-    currentQuery += key.toLowerCase();
-  } else {
-    return; // ignore other keys
+    updateTypedBubble();
+    renderWordGrid(currentQuery);
+    return;
   }
-
-  hiddenInput.value = currentQuery;
-  updateTypedBubble();
-  renderWordGrid(currentQuery);
 }
 
 function handleInputChange() {
   const sanitized = hiddenInput.value.toLowerCase().replace(/[^a-z]/g, '');
+  hiddenInput.value = sanitized;
   currentQuery = sanitized;
   updateTypedBubble();
   renderWordGrid(currentQuery);
