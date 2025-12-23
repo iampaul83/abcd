@@ -129,9 +129,9 @@ p {
 }
 
 .word-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .word-card {
@@ -140,19 +140,22 @@ p {
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 12px;
-  text-align: center;
+  text-align: left;
   font-weight: 700;
   letter-spacing: 0.5px;
   color: var(--ink);
   box-shadow: 0 8px 18px rgba(31, 42, 68, 0.04);
   transition: transform 0.1s ease, border-color 0.1s ease, box-shadow 0.1s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .word-card span {
   display: block;
   font-size: 13px;
   color: var(--muted);
-  margin-top: 4px;
+  margin-top: 0;
 }
 
 .word-card.highlight {
@@ -225,6 +228,6 @@ p {
   }
 
   .word-grid {
-    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 8px;
   }
 }

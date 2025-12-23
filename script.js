@@ -96,6 +96,14 @@ function handleKeydown(event) {
     return; // ignore other keys
   }
 
+  hiddenInput.value = currentQuery;
+  updateTypedBubble();
+  renderWordGrid(currentQuery);
+}
+
+function handleInputChange() {
+  const sanitized = hiddenInput.value.toLowerCase().replace(/[^a-z]/g, '');
+  currentQuery = sanitized;
   updateTypedBubble();
   renderWordGrid(currentQuery);
 }
@@ -105,10 +113,12 @@ function init() {
   updateTypedBubble();
   setStatus('輸入任何字母開始遊戲！');
   document.addEventListener('keydown', handleKeydown);
+  hiddenInput.addEventListener('input', handleInputChange);
 
   // Keep a hidden input focused for some mobile keyboards while staying invisible.
   hiddenInput.focus();
   hiddenInput.addEventListener('blur', () => hiddenInput.focus());
+  document.addEventListener('pointerdown', () => hiddenInput.focus());
 }
 
 init();
