@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>水果與動物配對遊戲</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>打字出圖小遊戲</h1>
+    <p>輸入單字（例如：apple），就會出現對應的圖片！</p>
+  </header>
+
+  <main>
+    <section class="controls">
+      <label for="word-input">輸入英文單字</label>
+      <div class="input-row">
+        <input id="word-input" type="text" autocomplete="off" placeholder="例如：apple" />
+        <button id="show-button" type="button">顯示圖片</button>
+      </div>
+      <p class="hint">可試試：apple、banana、cat、dog、car、sun</p>
+    </section>
+
+    <section class="display" aria-live="polite">
+      <div id="image-frame" class="image-frame" role="img" aria-label=""></div>
+      <p id="status" class="status">請輸入單字後按「顯示圖片」。</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
