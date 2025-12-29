@@ -1,7 +1,9 @@
-const wordInput = document.getElementById('word-input');
-const showButton = document.getElementById('show-button');
 const imageFrame = document.getElementById('image-frame');
 const status = document.getElementById('status');
+const wordGrid = document.getElementById('word-grid');
+const typedBubble = document.getElementById('typed-bubble');
+const wordCount = document.getElementById('word-count');
+const hiddenInput = document.getElementById('hidden-input');
 
 const imageMap = {
   apple: { src: 'images/apple.svg', label: 'Apple 蘋果' },
@@ -49,6 +51,39 @@ const imageMap = {
   zebra: { src: 'images/zebra.svg', label: 'Zebra 斑馬' }
 };
 
+let currentQuery = '';
+
+function setStatus(message, type = '') {
+  status.textContent = message;
+  status.classList.remove('positive', 'negative');
+  if (type) status.classList.add(type);
+}
+
+function renderWordGrid(filter = '') {
+  const keywords = Object.keys(imageMap);
+  const filtered = filter
+    ? keywords.filter((word) => word.includes(filter))
+    : keywords;
+
+  wordGrid.innerHTML = '';
+
+  filtered.forEach((word) => {
+    const card = document.createElement('div');
+    card.className = `word-card${filter && word.startsWith(filter) ? ' highlight' : ''}`;
+    card.setAttribute('role', 'listitem');
+    card.innerHTML = `${word}<span>${imageMap[word].hint}</span>`;
+    wordGrid.appendChild(card);
+  });
+
+  wordCount.textContent = `${filtered.length} / ${keywords.length}`;
+}
+
+function updateTypedBubble() {
+  typedBubble.textContent = currentQuery || '開始打字吧！';
+  typedBubble.classList.toggle('empty', currentQuery.length === 0);
+  typedBubble.setAttribute('aria-label', currentQuery || '尚未輸入');
+}
+
 function renderImage(word) {
   // Normalize input: lowercase and trim
   let normalizedWord = word.toLowerCase();
@@ -62,9 +97,8 @@ function renderImage(word) {
 
   if (!match) {
     imageFrame.setAttribute('aria-label', '沒有找到圖片');
-    status.textContent = '找不到這個單字，請換一個試試！';
-    status.style.color = '#d32f2f';
-    return;
+    setStatus('找不到這個單字，請再試一次！', 'negative');
+    return false;
   }
 
   const img = document.createElement('img');
@@ -72,9 +106,8 @@ function renderImage(word) {
   img.alt = match.label;
   imageFrame.setAttribute('aria-label', match.label);
   imageFrame.appendChild(img);
-
-  status.textContent = `你輸入了：${word}`;
-  status.style.color = '#2e2e2e';
+  setStatus(`你輸入了：${word}`, 'positive');
+  return true;
 }
 
 function handleShow() {
@@ -85,12 +118,50 @@ function handleShow() {
     wordInput.focus();
     return;
   }
-  renderImage(word);
+  renderImage(currentQuery.toLowerCase());
 }
 
-showButton.addEventListener('click', handleShow);
-wordInput.addEventListener('keydown', (event) => {
-  if (event.key === 'Enter') {
-    handleShow();
+function handleKeydown(event) {
+  const { key } = event;
+
+  if (key === 'Enter') {
+    event.preventDefault();
+    handleEnter();
+    return;
   }
-});
+
+  if (key === 'Escape') {
+    event.preventDefault();
+    currentQuery = '';
+    hiddenInput.value = '';
+    setStatus('輸入已清空，重新開始吧！');
+    imageFrame.innerHTML = '';
+    imageFrame.setAttribute('aria-label', '');
+    updateTypedBubble();
+    renderWordGrid(currentQuery);
+    return;
+  }
+}
+
+function handleInputChange() {
+  const sanitized = hiddenInput.value.toLowerCase().replace(/[^a-z]/g, '');
+  hiddenInput.value = sanitized;
+  currentQuery = sanitized;
+  updateTypedBubble();
+  renderWordGrid(currentQuery);
+}
+
+function init() {
+  renderWordGrid();
+  updateTypedBubble();
+  setStatus('輸入任何字母開始遊戲！');
+  document.addEventListener('keydown', handleKeydown);
+  hiddenInput.addEventListener('input', handleInputChange);
+
+  // Keep a hidden input focused for some mobile keyboards while staying invisible.
+  hiddenInput.focus();
+  hiddenInput.addEventListener('blur', () => hiddenInput.focus());
+  document.addEventListener('pointerdown', () => hiddenInput.focus());
+}
+
+init();
