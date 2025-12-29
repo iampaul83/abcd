@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Zebra 斑馬">
+  <rect width="200" height="200" fill="#fef6f3" rx="24" />
+  <rect x="80" y="80" width="40" height="60" fill="white" stroke="black" stroke-width="2" rx="5"/>
+  <rect x="70" y="50" width="30" height="40" fill="white" stroke="black" stroke-width="2" rx="5"/>
+  <path d="M85 80 L90 100 M95 80 L100 100 M105 80 L110 100" stroke="black" stroke-width="3" />
+  <path d="M75 55 L90 60" stroke="black" stroke-width="2" />
+  <path d="M75 65 L90 70" stroke="black" stroke-width="2" />
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Rainbow 彩虹">
+  <rect width="200" height="200" fill="#fef6f3" rx="24" />
+  <path d="M40 140 A 60 60 0 0 1 160 140" fill="none" stroke="#ef5350" stroke-width="10" />
+  <path d="M50 140 A 50 50 0 0 1 150 140" fill="none" stroke="#ffca28" stroke-width="10" />
+  <path d="M60 140 A 40 40 0 0 1 140 140" fill="none" stroke="#66bb6a" stroke-width="10" />
+  <path d="M70 140 A 30 30 0 0 1 130 140" fill="none" stroke="#42a5f5" stroke-width="10" />
+  <circle cx="40" cy="140" r="10" fill="white" />
+  <circle cx="160" cy="140" r="10" fill="white" />
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Duck 鴨子">
+  <rect width="200" height="200" fill="#fef6f3" rx="24" />
+  <path d="M60 120 Q60 160 100 160 L140 160 L160 140 L140 120 Z" fill="#ffeb3b" />
+  <circle cx="80" cy="90" r="30" fill="#ffeb3b" />
+  <circle cx="70" cy="85" r="4" fill="black" />
+  <path d="M50 90 L30 80 L50 70" fill="#ff9800" />
+</svg>

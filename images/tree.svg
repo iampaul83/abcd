@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Tree 樹">
+  <rect width="200" height="200" fill="#fef6f3" rx="24" />
+  <rect x="90" y="120" width="20" height="40" fill="#795548" />
+  <circle cx="100" cy="100" r="20" fill="#43a047" />
+  <circle cx="80" cy="110" r="20" fill="#43a047" />
+  <circle cx="120" cy="110" r="20" fill="#43a047" />
+  <circle cx="80" cy="90" r="20" fill="#43a047" />
+  <circle cx="120" cy="90" r="20" fill="#43a047" />
+  <circle cx="100" cy="70" r="20" fill="#43a047" />
+</svg>

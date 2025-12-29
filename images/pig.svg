@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Pig 豬">
+  <rect width="200" height="200" fill="#fef6f3" rx="24" />
+  <circle cx="100" cy="100" r="50" fill="#f48fb1" />
+  <ellipse cx="100" cy="110" rx="15" ry="10" fill="#ec407a" />
+  <circle cx="95" cy="110" r="3" fill="#880e4f" />
+  <circle cx="105" cy="110" r="3" fill="#880e4f" />
+  <circle cx="80" cy="90" r="4" fill="black" />
+  <circle cx="120" cy="90" r="4" fill="black" />
+  <path d="M50 70 L60 90 L70 70 Z" fill="#f48fb1" />
+  <path d="M150 70 L140 90 L130 70 Z" fill="#f48fb1" />
+</svg>

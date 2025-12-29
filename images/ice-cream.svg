@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Ice Cream 冰淇淋">
+  <rect width="200" height="200" fill="#fef6f3" rx="24" />
+  <path d="M100 180 L70 100 L130 100 Z" fill="#ffcc80" />
+  <circle cx="100" cy="90" r="35" fill="#f48fb1" />
+  <circle cx="85" cy="110" r="10" fill="#f48fb1" />
+  <circle cx="115" cy="110" r="10" fill="#f48fb1" />
+</svg>

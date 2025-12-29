@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Monkey 猴子">
+  <rect width="200" height="200" fill="#fef6f3" rx="24" />
+  <circle cx="60" cy="100" r="15" fill="#795548" />
+  <circle cx="140" cy="100" r="15" fill="#795548" />
+  <circle cx="100" cy="100" r="45" fill="#795548" />
+  <ellipse cx="100" cy="110" rx="35" ry="25" fill="#ffcc80" />
+  <circle cx="85" cy="90" r="4" fill="black" />
+  <circle cx="115" cy="90" r="4" fill="black" />
+  <path d="M85 115 Q100 130 115 115" stroke="black" stroke-width="2" fill="none" />
+</svg>
