@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Watermelon 西瓜">
+  <rect width="200" height="200" fill="#fef6f3" rx="24" />
+  <path d="M50 80 A 50 50 0 0 0 150 80 Z" fill="#ef5350" />
+  <path d="M50 80 A 50 50 0 0 0 150 80" fill="none" stroke="#2e7d32" stroke-width="8" />
+  <circle cx="80" cy="100" r="3" fill="black" />
+  <circle cx="100" cy="110" r="3" fill="black" />
+  <circle cx="120" cy="90" r="3" fill="black" />
+</svg>

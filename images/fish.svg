@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Fish 魚">
+  <rect width="200" height="200" fill="#fef6f3" rx="24" />
+  <ellipse cx="100" cy="100" rx="60" ry="40" fill="#42a5f5" />
+  <path d="M160 100 L190 70 L190 130 Z" fill="#42a5f5" />
+  <circle cx="70" cy="90" r="5" fill="black" />
+  <path d="M110 100 Q120 100 120 120" stroke="#1e88e5" stroke-width="2" fill="none" />
+  <path d="M130 90 Q140 90 140 110" stroke="#1e88e5" stroke-width="2" fill="none" />
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Ant 螞蟻">
+  <rect width="200" height="200" fill="#fef6f3" rx="24" />
+  <circle cx="60" cy="120" r="20" fill="#3e2723" />
+  <circle cx="100" cy="110" r="18" fill="#3e2723" />
+  <circle cx="140" cy="100" r="22" fill="#3e2723" />
+  <path d="M70 130 L90 150 M70 130 L90 110" stroke="#3e2723" stroke-width="4" />
+  <path d="M110 120 L130 140 M110 120 L130 100" stroke="#3e2723" stroke-width="4" />
+  <path d="M140 80 L130 60 M140 80 L150 60" stroke="#3e2723" stroke-width="4" />
+  <circle cx="135" cy="95" r="2" fill="white" />
+  <circle cx="145" cy="95" r="2" fill="white" />
+</svg>

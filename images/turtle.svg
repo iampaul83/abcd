@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Turtle 烏龜">
+  <rect width="200" height="200" fill="#fef6f3" rx="24" />
+  <path d="M70 110 A 30 30 0 0 1 130 110" fill="#4caf50" />
+  <ellipse cx="100" cy="110" rx="35" ry="5" fill="#388e3c" />
+  <circle cx="65" cy="105" r="10" fill="#81c784" />
+  <circle cx="60" cy="103" r="1" fill="black" />
+  <circle cx="80" cy="120" r="5" fill="#81c784" />
+  <circle cx="120" cy="120" r="5" fill="#81c784" />
+</svg>

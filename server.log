@@ -1,0 +1,8 @@
+127.0.0.1 - - [29/Dec/2025 00:16:32] "GET /index.html HTTP/1.1" 200 -
+127.0.0.1 - - [29/Dec/2025 00:16:32] "GET /styles.css HTTP/1.1" 200 -
+127.0.0.1 - - [29/Dec/2025 00:16:32] "GET /script.js HTTP/1.1" 200 -
+127.0.0.1 - - [29/Dec/2025 00:16:32] "GET /images/ant.svg HTTP/1.1" 200 -
+127.0.0.1 - - [29/Dec/2025 00:16:33] "GET /images/bear.svg HTTP/1.1" 200 -
+127.0.0.1 - - [29/Dec/2025 00:16:34] "GET /images/zebra.svg HTTP/1.1" 200 -
+127.0.0.1 - - [29/Dec/2025 00:16:34] "GET /images/ice-cream.svg HTTP/1.1" 200 -
+127.0.0.1 - - [29/Dec/2025 00:16:35] "GET /images/queen.svg HTTP/1.1" 200 -

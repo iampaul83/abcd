@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Rabbit 兔子">
+  <rect width="200" height="200" fill="#fef6f3" rx="24" />
+  <ellipse cx="100" cy="110" rx="30" ry="25" fill="#f5f5f5" />
+  <ellipse cx="85" cy="70" rx="8" ry="25" fill="#f5f5f5" />
+  <ellipse cx="115" cy="70" rx="8" ry="25" fill="#f5f5f5" />
+  <ellipse cx="85" cy="70" rx="4" ry="15" fill="#f48fb1" />
+  <ellipse cx="115" cy="70" rx="4" ry="15" fill="#f48fb1" />
+  <circle cx="90" cy="105" r="3" fill="black" />
+  <circle cx="110" cy="105" r="3" fill="black" />
+</svg>

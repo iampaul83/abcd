@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Orange 柳橙">
+  <rect width="200" height="200" fill="#fef6f3" rx="24" />
+  <circle cx="100" cy="100" r="50" fill="#ff9800" />
+  <circle cx="100" cy="100" r="40" fill="none" stroke="#f57c00" stroke-width="2" stroke-dasharray="2 4" />
+  <circle cx="105" cy="55" r="5" fill="#2e7d32" />
+  <path d="M105 55 Q120 40 130 50" stroke="#2e7d32" stroke-width="4" fill="none" />
+</svg>

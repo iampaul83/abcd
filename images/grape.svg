@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Grape 葡萄">
+  <rect width="200" height="200" fill="#fef6f3" rx="24" />
+  <circle cx="80" cy="60" r="15" fill="#ab47bc" />
+  <circle cx="100" cy="60" r="15" fill="#ab47bc" />
+  <circle cx="120" cy="60" r="15" fill="#ab47bc" />
+  <circle cx="90" cy="80" r="15" fill="#ab47bc" />
+  <circle cx="110" cy="80" r="15" fill="#ab47bc" />
+  <circle cx="100" cy="100" r="15" fill="#ab47bc" />
+  <path d="M100 50 L100 30" stroke="#795548" stroke-width="4" />
+  <path d="M100 30 Q120 20 130 40" fill="none" stroke="#4caf50" stroke-width="3" />
+</svg>

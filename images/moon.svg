@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Moon 月亮">
+  <rect width="200" height="200" fill="#fef6f3" rx="24" />
+  <path d="M120 60 Q150 100 120 140 Q100 120 100 80 Q100 60 120 60" fill="#ffeb3b" transform="rotate(-30 110 100)" />
+  <path d="M130 50 A 50 50 0 0 0 130 150 A 40 40 0 0 1 130 50" fill="#fdd835" />
+</svg>

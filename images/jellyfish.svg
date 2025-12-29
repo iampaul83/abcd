@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Jellyfish 水母">
+  <rect width="200" height="200" fill="#fef6f3" rx="24" />
+  <path d="M60 100 Q100 40 140 100" fill="#ce93d8" />
+  <path d="M60 100 Q100 120 140 100" fill="#ba68c8" />
+  <path d="M70 110 Q60 150 80 160" stroke="#ba68c8" stroke-width="4" fill="none" />
+  <path d="M90 115 Q90 150 100 170" stroke="#ba68c8" stroke-width="4" fill="none" />
+  <path d="M110 115 Q120 150 110 170" stroke="#ba68c8" stroke-width="4" fill="none" />
+  <path d="M130 110 Q140 150 120 160" stroke="#ba68c8" stroke-width="4" fill="none" />
+</svg>

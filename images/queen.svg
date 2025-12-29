@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Queen 皇后">
+  <rect width="200" height="200" fill="#fef6f3" rx="24" />
+  <circle cx="100" cy="100" r="30" fill="#ffcc80" />
+  <path d="M70 70 L70 50 L85 60 L100 40 L115 60 L130 50 L130 70 Z" fill="#ffd700" />
+  <circle cx="90" cy="95" r="3" fill="black" />
+  <circle cx="110" cy="95" r="3" fill="black" />
+  <path d="M90 110 Q100 120 110 110" stroke="#d32f2f" stroke-width="2" fill="none" />
+</svg>

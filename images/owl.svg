@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Owl 貓頭鷹">
+  <rect width="200" height="200" fill="#fef6f3" rx="24" />
+  <ellipse cx="100" cy="100" rx="40" ry="50" fill="#8d6e63" />
+  <circle cx="85" cy="85" r="12" fill="white" />
+  <circle cx="115" cy="85" r="12" fill="white" />
+  <circle cx="85" cy="85" r="4" fill="black" />
+  <circle cx="115" cy="85" r="4" fill="black" />
+  <path d="M95 100 L105 100 L100 110 Z" fill="#ffb74d" />
+</svg>

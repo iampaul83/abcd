@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Pizza 披薩">
+  <rect width="200" height="200" fill="#fef6f3" rx="24" />
+  <path d="M100 180 L40 60 L160 60 Z" fill="#ffcc80" />
+  <path d="M40 60 Q100 40 160 60" fill="#ffab91" />
+  <circle cx="100" cy="100" r="8" fill="#d32f2f" />
+  <circle cx="80" cy="80" r="6" fill="#d32f2f" />
+  <circle cx="120" cy="120" r="6" fill="#d32f2f" />
+</svg>
