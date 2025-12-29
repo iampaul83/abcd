@@ -1,8 +1,5 @@
 const imageFrame = document.getElementById('image-frame');
-const status = document.getElementById('status');
 const wordGrid = document.getElementById('word-grid');
-
-const wordCount = document.getElementById('word-count');
 const hiddenInput = document.getElementById('hidden-input');
 
 const imageMap = {
@@ -53,11 +50,7 @@ const imageMap = {
 
 let currentQuery = '';
 
-function setStatus(message, type = '') {
-  status.textContent = message;
-  status.classList.remove('positive', 'negative');
-  if (type) status.classList.add(type);
-}
+
 
 function renderWordGrid(filter = '') {
   const keywords = Object.keys(imageMap);
@@ -83,7 +76,7 @@ function renderWordGrid(filter = '') {
     wordGrid.appendChild(card);
   });
 
-  wordCount.textContent = `${filtered.length} / ${keywords.length}`;
+
 }
 
 
@@ -101,7 +94,7 @@ function renderImage(word) {
 
   if (!match) {
     imageFrame.setAttribute('aria-label', '沒有找到圖片');
-    setStatus('找不到這個單字，請再試一次！', 'negative');
+    imageFrame.setAttribute('aria-label', '沒有找到圖片');
     return false;
   }
 
@@ -110,14 +103,13 @@ function renderImage(word) {
   img.alt = match.label;
   imageFrame.setAttribute('aria-label', match.label);
   imageFrame.appendChild(img);
-  setStatus(`你輸入了：${word}`, 'positive');
+  imageFrame.setAttribute('aria-label', match.label);
+  imageFrame.appendChild(img);
   return true;
 }
 
 function handleEnter() {
   if (!currentQuery) {
-    status.textContent = '先輸入一個單字吧！';
-    status.classList.add('negative');
     return;
   }
   renderImage(currentQuery);
@@ -136,7 +128,6 @@ function handleKeydown(event) {
     event.preventDefault();
     currentQuery = '';
     hiddenInput.value = '';
-    setStatus('輸入已清空，重新開始吧！');
     imageFrame.innerHTML = '';
     imageFrame.setAttribute('aria-label', '');
     renderWordGrid(currentQuery);
@@ -173,7 +164,7 @@ function handleInputChange() {
 function init() {
   renderWordGrid();
   renderWordGrid();
-  setStatus('輸入任何字母開始遊戲！');
+
   document.addEventListener('keydown', handleKeydown);
   hiddenInput.addEventListener('input', handleInputChange);
 

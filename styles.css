@@ -18,51 +18,41 @@
 
 body {
   margin: 0;
-  min-height: 100vh;
+  height: 100vh;
   font-family: 'Noto Sans TC', 'Segoe UI', system-ui, -apple-system, sans-serif;
   background: var(--background);
   color: var(--ink);
   line-height: 1.6;
   display: flex;
   justify-content: center;
-  padding: 36px 20px;
+  align-items: center;
+  /* Center vertically */
+  padding: 24px;
+  overflow: hidden;
+  /* Prevent scrolling if everything fits */
 }
 
 main {
-  width: min(1100px, 100%);
-}
-
-header {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.eyebrow {
-  display: inline-block;
-  padding: 6px 10px;
-  margin: 0 0 8px;
-  background: rgba(255, 138, 101, 0.12);
-  color: #dd5c37;
-  border-radius: 10px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
-
-h1 {
-  margin: 0 0 6px;
-  color: var(--ink);
-  font-size: clamp(28px, 4vw, 34px);
+  width: 100%;
+  max-width: 1200px;
+  height: 90vh;
+  /* Use most of the height */
+  display: flex;
+  /* Flex for full height children */
 }
 
 p {
   margin: 0;
 }
 
+/* Landscape Layout */
 .game-layout {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 20px;
-  align-items: start;
+  grid-template-columns: 1fr 1.5fr;
+  /* More space for image */
+  gap: 24px;
+  width: 100%;
+  height: 100%;
 }
 
 .word-panel,
@@ -70,98 +60,67 @@ p {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--rounded);
-  padding: 20px;
+  padding: 24px;
   box-shadow: var(--shadow);
   backdrop-filter: blur(5px);
-}
-
-.type-display {
-  background: linear-gradient(135deg, rgba(94, 207, 255, 0.14), rgba(255, 138, 101, 0.16));
-  border: 1px solid rgba(94, 207, 255, 0.24);
-  border-radius: var(--rounded);
-  padding: 16px;
-  margin-bottom: 16px;
-}
-
-.label {
-  font-weight: 700;
-  letter-spacing: 0.4px;
-  color: #33405f;
-}
-
-.hint {
-  margin-top: 10px;
-  color: var(--muted);
-  font-size: 14px;
-}
-
-.typed-bubble {
-  margin-top: 8px;
-  min-height: 56px;
-  background: #fff;
-  border: 1px dashed var(--border);
-  border-radius: 14px;
-  padding: 12px;
+  height: 100%;
+  overflow: hidden;
+  /* Local scroll if needed */
   display: flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  font-size: 20px;
+  flex-direction: column;
 }
 
-.typed-bubble.empty {
-  color: var(--muted);
-  letter-spacing: normal;
-  font-weight: 600;
+/* Word Bank Styling */
+.word-bank {
+  height: 100%;
+  overflow-y: auto;
+  /* Scrollable word list */
+  padding-right: 4px;
+  /* Space for scrollbar */
 }
 
-.word-bank__header {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-  margin-bottom: 10px;
+/* Custom Scrollbar */
+.word-bank::-webkit-scrollbar {
+  width: 6px;
 }
 
-.count {
-  color: var(--muted);
-  font-size: 14px;
+.word-bank::-webkit-scrollbar-thumb {
+  background-color: #d1d5db;
+  border-radius: 4px;
 }
 
 .word-grid {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
+  /* Increased gap for touch targets */
 }
 
 .word-card {
   position: relative;
   background: #fff;
   border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 12px;
+  border-radius: 14px;
+  padding: 16px 20px;
+  /* Larger padding */
   text-align: left;
   font-weight: 700;
   letter-spacing: 0.5px;
   color: var(--ink);
-  box-shadow: 0 8px 18px rgba(31, 42, 68, 0.04);
-  transition: transform 0.1s ease, border-color 0.1s ease, box-shadow 0.1s ease;
+  font-size: 1.25rem;
+  /* Larger text */
+  box-shadow: 0 4px 12px rgba(31, 42, 68, 0.04);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.word-card span {
-  display: block;
-  font-size: 13px;
-  color: var(--muted);
-  margin-top: 0;
-}
-
 .word-card.highlight {
-  border-color: rgba(255, 138, 101, 0.6);
-  box-shadow: 0 10px 28px rgba(255, 138, 101, 0.2);
-  transform: translateY(-2px);
+  border-color: rgba(255, 138, 101, 1);
+  box-shadow: 0 8px 20px rgba(255, 138, 101, 0.25);
+  background-color: #fff8f5;
+  /* Removed transform: scale(1.02) to prevent overlapping layout issues */
 }
 
 .matched-letter {
@@ -169,40 +128,32 @@ p {
   font-weight: 800;
   text-decoration: underline;
   text-decoration-color: rgba(255, 138, 101, 0.5);
-  text-underline-offset: 2px;
+  text-underline-offset: 4px;
+  vertical-align: baseline;
+  /* Ensure alignment matches surrounding text */
 }
 
+/* Display / Result Area */
 .display {
-  text-align: center;
-}
-
-.frame-header {
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 12px;
-}
-
-.status {
-  color: var(--muted);
-  font-weight: 600;
-}
-
-.status.positive {
-  color: #2f7d32;
-}
-
-.status.negative {
-  color: #d54242;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  /* Remove padding to let image fill or center properly */
+  background: transparent;
+  /* Or make it transparent if desired, keeping surface for consistency */
+  border: none;
+  box-shadow: none;
 }
 
 .image-frame {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  background: repeating-linear-gradient(45deg, #f9fbff, #f9fbff 12px, #eef3fb 12px, #eef3fb 24px);
-  border-radius: 14px;
-  border: 1px dashed #c7d1e2;
+  height: 100%;
+  background: var(--surface);
+  /* Move surface style here if we want the frame to look like a card */
+  border: 1px solid var(--border);
+  border-radius: var(--rounded);
+  box-shadow: var(--shadow);
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -211,9 +162,12 @@ p {
 
 .image-frame img,
 .image-frame svg {
-  width: 78%;
-  max-width: 340px;
+  width: auto;
   height: auto;
+  max-width: 85%;
+  max-height: 85%;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
 }
 
 #hidden-input {
@@ -224,18 +178,10 @@ p {
   width: 0;
 }
 
-@media (max-width: 900px) {
+/* Responsive adjustments if needed, though primarily targeting iPad Mini Landscape */
+@media (max-width: 900px) and (orientation: portrait) {
   .game-layout {
     grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 540px) {
-  body {
-    padding: 20px 12px;
-  }
-
-  .word-grid {
-    gap: 8px;
+    grid-template-rows: 1fr 1fr;
   }
 }
