@@ -7,6 +7,7 @@ const imageMap = {
   ant: { src: 'images/ant.svg', label: 'Ant 螞蟻' },
   banana: { src: 'images/banana.svg', label: 'Banana 香蕉' },
   bear: { src: 'images/bear.svg', label: 'Bear 熊' },
+  bird: { src: 'images/bird.svg', label: 'Bird 小鳥' },
   cake: { src: 'images/cake.svg', label: 'Cake 蛋糕' },
   cat: { src: 'images/cat.svg', label: 'Cat 貓咪' },
   car: { src: 'images/car.svg', label: 'Car 小汽車' },
@@ -28,8 +29,9 @@ const imageMap = {
   monkey: { src: 'images/monkey.svg', label: 'Monkey 猴子' },
   moon: { src: 'images/moon.svg', label: 'Moon 月亮' },
   nest: { src: 'images/nest.svg', label: 'Nest 鳥巢' },
-  owl: { src: 'images/owl.svg', label: 'Owl 貓頭鷹' },
+  octopus: { src: 'images/octopus.svg', label: 'Octopus 章魚' },
   orange: { src: 'images/orange.svg', label: 'Orange 柳橙' },
+  owl: { src: 'images/owl.svg', label: 'Owl 貓頭鷹' },
   pig: { src: 'images/pig.svg', label: 'Pig 豬' },
   pizza: { src: 'images/pizza.svg', label: 'Pizza 披薩' },
   queen: { src: 'images/queen.svg', label: 'Queen 皇后' },
@@ -66,11 +68,11 @@ function renderWordGrid(filter = '') {
     card.setAttribute('role', 'listitem');
 
     if (filter && word.startsWith(filter)) {
-      const match = word.slice(0, filter.length);
-      const rest = word.slice(filter.length);
+      const match = word.slice(0, filter.length).toUpperCase();
+      const rest = word.slice(filter.length).toUpperCase();
       card.innerHTML = `<div><b class="matched-letter">${match}</b>${rest}</div>`;
     } else {
-      card.innerHTML = `<div>${word}</div>`;
+      card.innerHTML = `<div>${word.toUpperCase()}</div>`;
     }
 
     wordGrid.appendChild(card);
