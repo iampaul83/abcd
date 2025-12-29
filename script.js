@@ -62,7 +62,7 @@ function setStatus(message, type = '') {
 function renderWordGrid(filter = '') {
   const keywords = Object.keys(imageMap);
   const filtered = filter
-    ? keywords.filter((word) => word.includes(filter))
+    ? keywords.filter((word) => word.startsWith(filter))
     : keywords;
 
   wordGrid.innerHTML = '';
@@ -71,7 +71,7 @@ function renderWordGrid(filter = '') {
     const card = document.createElement('div');
     card.className = `word-card${filter && word.startsWith(filter) ? ' highlight' : ''}`;
     card.setAttribute('role', 'listitem');
-    card.innerHTML = `${word}<span>${imageMap[word].hint}</span>`;
+    card.innerHTML = `${word}`;
     wordGrid.appendChild(card);
   });
 
@@ -110,15 +110,13 @@ function renderImage(word) {
   return true;
 }
 
-function handleShow() {
-  const word = wordInput.value.trim();
-  if (!word) {
+function handleEnter() {
+  if (!currentQuery) {
     status.textContent = '先輸入一個單字吧！';
-    status.style.color = '#d32f2f';
-    wordInput.focus();
+    status.classList.add('negative');
     return;
   }
-  renderImage(currentQuery.toLowerCase());
+  renderImage(currentQuery);
 }
 
 function handleKeydown(event) {
