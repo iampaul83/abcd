@@ -85,8 +85,9 @@ function renderImage(word) {
   // Normalize input: lowercase and trim
   let normalizedWord = word.toLowerCase();
 
-  // Handle 'ice-cream' vs 'ice cream'
-  if (normalizedWord === 'ice-cream') normalizedWord = 'ice cream';
+  if (normalizedWord.includes('-')) {
+    normalizedWord = normalizedWord.replace(/-/g, ' ');
+  }
 
   const match = imageMap[normalizedWord];
 
