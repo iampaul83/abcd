@@ -101,6 +101,7 @@ function renderImage(word) {
   const img = document.createElement('img');
   img.src = match.src;
   img.alt = match.label;
+  img.classList.add('pop-in');
   imageFrame.setAttribute('aria-label', match.label);
   imageFrame.appendChild(img);
   imageFrame.setAttribute('aria-label', match.label);
