@@ -95,7 +95,6 @@ function renderImage(word) {
 
   if (!match) {
     imageFrame.setAttribute('aria-label', '沒有找到圖片');
-    imageFrame.setAttribute('aria-label', '沒有找到圖片');
     return false;
   }
 
@@ -103,8 +102,6 @@ function renderImage(word) {
   img.src = match.src;
   img.alt = match.label;
   img.classList.add('pop-in');
-  imageFrame.setAttribute('aria-label', match.label);
-  imageFrame.appendChild(img);
   imageFrame.setAttribute('aria-label', match.label);
   imageFrame.appendChild(img);
   return true;
@@ -139,7 +136,7 @@ function handleKeydown(event) {
 
 function handleInputChange() {
   const rawValue = hiddenInput.value.toLowerCase();
-  const candidate = rawValue.replace(/[^a-z]/g, '');
+  const candidate = rawValue.replace(/[^a-z\s]/g, '');
 
   // Always allow clearing
   if (candidate.length === 0) {
@@ -164,7 +161,6 @@ function handleInputChange() {
 }
 
 function init() {
-  renderWordGrid();
   renderWordGrid();
 
   document.addEventListener('keydown', handleKeydown);
