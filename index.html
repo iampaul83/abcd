@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>水果與動物配對遊戲</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
   <header>
     <p class="eyebrow">鍵盤版小遊戲</p>
@@ -15,11 +17,7 @@
 
   <main class="game-layout">
     <section class="word-panel" aria-live="polite">
-      <div class="type-display">
-        <p class="label">目前輸入</p>
-        <div id="typed-bubble" class="typed-bubble" aria-label="目前輸入的字母"></div>
-        <p class="hint">打字即可篩選，Enter 顯示，Backspace 刪除，Esc 清空</p>
-      </div>
+
       <div class="word-bank">
         <div class="word-bank__header">
           <p class="label">可以輸入的單字</p>
@@ -38,16 +36,10 @@
     </section>
   </main>
 
-  <input
-    id="hidden-input"
-    type="text"
-    aria-hidden="true"
-    autocomplete="off"
-    tabindex="-1"
-    aria-label="隱藏輸入欄位"
-    autofocus
-  />
+  <input id="hidden-input" type="text" aria-hidden="true" autocomplete="off" tabindex="-1" aria-label="隱藏輸入欄位"
+    autofocus />
 
   <script src="script.js"></script>
 </body>
+
 </html>

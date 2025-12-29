@@ -1,7 +1,7 @@
 const imageFrame = document.getElementById('image-frame');
 const status = document.getElementById('status');
 const wordGrid = document.getElementById('word-grid');
-const typedBubble = document.getElementById('typed-bubble');
+
 const wordCount = document.getElementById('word-count');
 const hiddenInput = document.getElementById('hidden-input');
 
@@ -71,18 +71,22 @@ function renderWordGrid(filter = '') {
     const card = document.createElement('div');
     card.className = `word-card${filter && word.startsWith(filter) ? ' highlight' : ''}`;
     card.setAttribute('role', 'listitem');
-    card.innerHTML = `${word}`;
+
+    if (filter && word.startsWith(filter)) {
+      const match = word.slice(0, filter.length);
+      const rest = word.slice(filter.length);
+      card.innerHTML = `<div><b class="matched-letter">${match}</b>${rest}</div>`;
+    } else {
+      card.innerHTML = `<div>${word}</div>`;
+    }
+
     wordGrid.appendChild(card);
   });
 
   wordCount.textContent = `${filtered.length} / ${keywords.length}`;
 }
 
-function updateTypedBubble() {
-  typedBubble.textContent = currentQuery || '開始打字吧！';
-  typedBubble.classList.toggle('empty', currentQuery.length === 0);
-  typedBubble.setAttribute('aria-label', currentQuery || '尚未輸入');
-}
+
 
 function renderImage(word) {
   // Normalize input: lowercase and trim
@@ -135,23 +139,40 @@ function handleKeydown(event) {
     setStatus('輸入已清空，重新開始吧！');
     imageFrame.innerHTML = '';
     imageFrame.setAttribute('aria-label', '');
-    updateTypedBubble();
     renderWordGrid(currentQuery);
     return;
   }
 }
 
 function handleInputChange() {
-  const sanitized = hiddenInput.value.toLowerCase().replace(/[^a-z]/g, '');
-  hiddenInput.value = sanitized;
-  currentQuery = sanitized;
-  updateTypedBubble();
-  renderWordGrid(currentQuery);
+  const rawValue = hiddenInput.value.toLowerCase();
+  const candidate = rawValue.replace(/[^a-z]/g, '');
+
+  // Always allow clearing
+  if (candidate.length === 0) {
+    currentQuery = '';
+    hiddenInput.value = '';
+    renderWordGrid(currentQuery);
+    return;
+  }
+
+  // Check if strict prefix match exists in the allowed words
+  const keywords = Object.keys(imageMap);
+  const isValid = keywords.some(word => word.startsWith(candidate));
+
+  if (isValid) {
+    currentQuery = candidate;
+    hiddenInput.value = candidate;
+    renderWordGrid(currentQuery);
+  } else {
+    // Block input if invalid
+    hiddenInput.value = currentQuery;
+  }
 }
 
 function init() {
   renderWordGrid();
-  updateTypedBubble();
+  renderWordGrid();
   setStatus('輸入任何字母開始遊戲！');
   document.addEventListener('keydown', handleKeydown);
   hiddenInput.addEventListener('input', handleInputChange);
