@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Moon 月亮">
-  <rect width="200" height="200" fill="#fef6f3" rx="24" />
-  <path d="M120 60 Q150 100 120 140 Q100 120 100 80 Q100 60 120 60" fill="#ffeb3b" transform="rotate(-30 110 100)" />
-  <path d="M130 50 A 50 50 0 0 0 130 150 A 40 40 0 0 1 130 50" fill="#fdd835" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <path d="M30,10 A40,40 0 1,0 30,90 A30,30 0 1,1 30,10 Z" fill="#ff0" />
+  <circle cx="60" cy="40" r="3" fill="#aa0" opacity="0.3"/>
+  <circle cx="50" cy="60" r="5" fill="#aa0" opacity="0.3"/>
 </svg>
