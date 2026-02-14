@@ -89,11 +89,11 @@ function renderWordGrid(filter = '') {
     card.setAttribute('role', 'listitem');
 
     if (filter && word.startsWith(filter)) {
-      const match = word.slice(0, filter.length).toUpperCase();
-      const rest = word.slice(filter.length).toUpperCase();
+      const match = word.slice(0, filter.length).toLowerCase();
+      const rest = word.slice(filter.length).toLowerCase();
       card.innerHTML = `<div><b class="matched-letter">${match}</b>${rest}</div>`;
     } else {
-      card.innerHTML = `<div>${word.toUpperCase()}</div>`;
+      card.innerHTML = `<div>${word.toLowerCase()}</div>`;
     }
 
     // Add click event listener to each card
